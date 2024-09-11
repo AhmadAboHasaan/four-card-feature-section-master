@@ -1,0 +1,151 @@
+:root {
+    --h-color: #b4b4b6;
+    --p-color: #d6d5da;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+}
+
+
+.contanier {
+    display: flex;
+    padding: 2.5vh 5vw;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background-color: #fafafa;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contanier header {
+    display: flex;
+    margin: 2.5vh 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contanier header h2 {
+    color: var(--h-color);
+    font-weight: 300;
+    font-size: 1.81vw;
+    margin: 0;
+}
+
+.contanier header span h2 {
+    color: black;
+    font-weight: 900;
+    font-size: 1.572vw;
+}
+
+.contanier header p {
+    font-size: 0.8vw;
+    width: 60%;
+    color: var(--p-color);
+}
+
+.contanier .components {
+    width: 80vw;
+    height: 75vh;
+    display: grid;
+    grid-template-areas: "l c1 r" " l c2 r";
+    gap: 27.5px;
+    text-align: left;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.contanier .components .component-1,
+.contanier .components .component-2,
+.contanier .components .component-3,
+.contanier .components .component-4 {
+    width: 300px;
+    height: 250px;
+    padding: 1.25vw 2.5vw;
+    background-color: white;
+    box-shadow: 2.5px 12.5px 25px -2px rgb(0 0 125 / 15%);
+}
+
+.contanier .components span {
+    display: block;
+    text-align: end;
+    position: relative;
+}
+
+.contanier .components span img {
+    position: relative;
+    top: 50px;
+}
+
+
+.contanier .components h3 {
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.contanier .components p {
+    color: var(--p-color);
+    width: 90%;
+    font-size: 12px;
+}
+
+
+.contanier .components .component-1-contanier {
+    grid-area: l;
+    display: flex;
+    align-items: center;
+}
+
+.contanier .components .component-1-contanier .component-1 {
+    text-align: left;
+    z-index: 1;
+}
+
+.contanier .components .component-1-contanier .component-1::before {
+    z-index: 0;
+    position: absolute;
+}
+
+.contanier .components .component-2 {
+    grid-area: c1;
+}
+
+.contanier .components .component-2::before {
+    grid-area: c1;
+}
+
+.contanier .components .component-3-contanier {
+    grid-area: r;
+    display: flex;
+    align-items: center;
+}
+
+.contanier .components .component-3-contanier .component-3 {
+    text-align: left;
+}
+
+.contanier .components .component-3-contanier .component-3::before {
+    text-align: left;
+}
+
+.contanier .components .component-4 {
+    grid-area: c2;
+}
+
+.contanier .components .component-4::before {
+    grid-area: c2;
+}
