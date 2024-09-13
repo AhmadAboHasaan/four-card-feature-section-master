@@ -1,6 +1,10 @@
 :root {
     --h-color: #b4b4b6;
     --p-color: #d6d5da;
+    --supervisor-color: #00c3c3;
+    --team-builder-color: #ff527b;
+    --karma-color: #ffca47;
+    --calculator-color: #3cbaff;
 }
 
 * {
@@ -20,7 +24,7 @@ body {
 }
 
 
-.contanier {
+.container {
     display: flex;
     padding: 2.5vh 5vw;
     width: 100vw;
@@ -31,35 +35,33 @@ body {
     align-items: center;
 }
 
-.contanier header {
+.container header {
     display: flex;
     margin: 2.5vh 0;
     flex-direction: column;
     align-items: center;
 }
 
-.contanier header h2 {
+.container header h2 {
     color: var(--h-color);
     font-weight: 300;
     font-size: 1.81vw;
     margin: 0;
 }
 
-.contanier header span h2 {
+.container header span h2 {
     color: black;
-    font-weight: 900;
     font-size: 1.572vw;
 }
 
-.contanier header p {
+.container header p {
     font-size: 0.8vw;
     width: 60%;
     color: var(--p-color);
 }
 
-.contanier .components {
+.container .components {
     width: 80vw;
-    height: 75vh;
     display: grid;
     grid-template-areas: "l c1 r" " l c2 r";
     gap: 27.5px;
@@ -69,83 +71,152 @@ body {
     justify-content: center;
 }
 
-.contanier .components .component-1,
-.contanier .components .component-2,
-.contanier .components .component-3,
-.contanier .components .component-4 {
-    width: 300px;
-    height: 250px;
-    padding: 1.25vw 2.5vw;
+
+.components .component {
+    box-sizing: border-box;
+    display: inline-table;
+    width: 22.5vw;
+    padding: 0.625vw 1.25vw;
     background-color: white;
     box-shadow: 2.5px 12.5px 25px -2px rgb(0 0 125 / 15%);
 }
 
-.contanier .components span {
+.component::before {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 22.5vw;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: 0 -1.25vw;
+    top: -10px;
+    left: 0;
+}
+
+.component.Supervisor::before {
+    background-color: var(--supervisor-color);
+}
+
+.component.team-builder::before {
+    background-color: var(--team-builder-color);
+}
+
+.component.Karma::before {
+    background-color: var(--karma-color);
+}
+
+.component.Calculator::before {
+    background-color: var(--calculator-color);
+}
+
+.container .components span {
     display: block;
     text-align: end;
     position: relative;
 }
 
-.contanier .components span img {
-    position: relative;
-    top: 50px;
-}
-
-
-.contanier .components h3 {
-    font-weight: 900;
+.container .components h3 {
     margin-bottom: 5px;
+    font-size: 1.5vw;
 }
 
-.contanier .components p {
+.container .components p {
     color: var(--p-color);
     width: 90%;
-    font-size: 12px;
+    font-size: 1vw;
+    margin-bottom: 5vh;
 }
 
 
-.contanier .components .component-1-contanier {
+.container .components .component-Supervisor-container {
     grid-area: l;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
-.contanier .components .component-1-contanier .component-1 {
+.components .component.Supervisor {
     text-align: left;
     z-index: 1;
 }
 
-.contanier .components .component-1-contanier .component-1::before {
-    z-index: 0;
-    position: absolute;
-}
-
-.contanier .components .component-2 {
+.components .component.team-builder {
     grid-area: c1;
 }
 
-.contanier .components .component-2::before {
-    grid-area: c1;
-}
-
-.contanier .components .component-3-contanier {
+.components .component-Calculator-container {
     grid-area: r;
     display: flex;
     align-items: center;
 }
 
-.contanier .components .component-3-contanier .component-3 {
+.components .component.Calculator {
     text-align: left;
 }
 
-.contanier .components .component-3-contanier .component-3::before {
-    text-align: left;
-}
-
-.contanier .components .component-4 {
+.components .component.Karma {
     grid-area: c2;
 }
 
-.contanier .components .component-4::before {
-    grid-area: c2;
+@media (max-width: 768px) {
+    .container {
+        padding: 2.5vh 2vw;
+        height: auto;
+        width: 100%;
+    }
+
+    .container header {
+        margin: 1.5vh 0;
+        width: 75%; 
+    }
+
+    .container header h2 {
+        font-size: 4.5vw;
+    }
+
+    .container header span h2 {
+        font-size: 4vw;
+    }
+
+    .container header p {
+        font-size: 3.5vw;
+        width: 90%;
+    }
+
+    .container .components {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .components .component {
+        width: 90vw;
+        height: 400px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .component::before {
+        width: 107.5%;
+        height: 5px;
+        border-radius: 10px 10px 0 0;
+        position: relative;
+        margin: 0px -3.12vw;
+        top: -25px;
+        left: 0;
+    }
+
+    .components .component h3 {
+        font-size: 5vw;
+    }
+
+    .components .component p {
+        font-size: 3.5vw;
+        margin-bottom: 3vh;
+    }
+
+    .components .component img {
+        width: 22.5%;
+    }
 }
